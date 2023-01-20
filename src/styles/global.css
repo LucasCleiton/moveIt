@@ -1,0 +1,440 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --white:#fff;
+    --background: #F2F3F5;
+    --gray-line:#DCDDE0;
+    --text:#666666;
+    --text-highlight:#B3B9FF;
+    --title:#2E384D;
+    --red:#E83F5B;
+    --blue:#5965E0;
+    --blue-dark:#4953B8;
+    --blue-twitter:#2AA9E0;
+    --green:#4CD62B;
+}
+
+
+@media(max-width: 1000px){
+    html{
+        font-size: 95.75%;
+    }
+}
+@media(max-width: 720px){
+    html{
+        font-size: 87.5%;
+    }
+}
+
+body{
+    background: var(--background);
+    color:var(--text);
+}
+
+body, input, textarea, button{
+    font: 400 1rem "Inter", sans-serif;
+}
+
+button{
+    cursor: pointer;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/*Home.modules.css*/
+.container{
+    height: 100vh;
+    max-width: 992px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.container section {
+    flex: 1;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6.25rem;
+    align-content: center;
+}
+
+
+
+/* ExperienceBar.modules.css*/
+
+.experience-bar {
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.experience-bar  span{
+
+    font-size: 1rem;
+}
+.experience-bar > div{
+    flex:1;
+    height: 4px;
+    border-radius: 4px;
+    background: var(--gray-line);
+    margin: 0 1.5rem;
+    position:relative;
+}
+
+.experience-bar > div> div{
+  height: 4px;
+  border-radius:4px;
+  background: var(--green);
+}
+
+span.current-experience{
+    position: absolute;
+    top: 12px;
+    transform: translatex(-50%);
+}
+
+/* Profile.module.css*/
+
+.profile-container {
+    margin-top: 3.5rem;
+    display: flex;
+    align-items: center ;
+
+}
+.profile-container > img {
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: 58%;
+}
+
+.profile-container div {
+
+margin-left: 1.5rem;
+}
+
+.profile-container div strong {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--title);
+}
+
+
+.profile-container div p {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+.profile-container div img {
+    margin-right: 0.5rem;
+}
+
+/* CompletedChallenges.module.css*/
+
+.completed-challenges-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 3.5rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #d7d8da;
+
+    font-weight: 500;
+}
+
+.completed-challenges-container span:first-child {
+    font-size: 1.25rem;
+}
+
+.completed-challenges-container span:last-child {
+    font-size: 1.5rem;
+}
+
+/* Countdown.modules.css*/
+
+.countdown-container{
+    display: flex;
+    align-items: center;
+    /*font-family: Rajdani;*/
+
+    font-weight: 600;
+    color: var(--title);
+}
+
+.countdown-container > div {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    background: var(--white);
+    box-shadow:  0 0 6,px rgba( 0, 0, 0, 0.05);
+    border-radius: 5px;
+    font-size: 5.5rem;
+    text-align: center;
+}
+ 
+.countdown-container > div span {
+    flex: 1;
+
+}
+
+.countdown-container > div span:first-child{
+    border-right: 1px solid #f0f1f3;
+
+}
+
+.countdown-container > div span:last-child {
+    border-left: 1px solid #f0f1f3;
+
+}
+
+.countdown-container > span {
+    font-size: 6.25rem;
+    margin: 0 0.5rem;
+
+}
+
+.countdown-button {
+    width: 100%;
+    height: 5rem;
+
+    margin-top:  2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    border-radius: 5px;
+
+    background: var(--blue);
+    color: var(--white);
+
+    font-size: 1.25rem;
+    font-weight: 600;
+
+    transition: backgorund-color 0.2s;
+}
+
+
+.countdown-button:not(:disabled):hover {
+    background: var(--blue-dark);
+}
+
+.countdown-button-active {
+    background:  var(--white);
+    color: var(--title)
+}
+
+.countdown-button-active:not(:disabled):hover {
+    background:  var(--red); 
+    color: var(--white);
+
+}
+
+.countdown-button:disabled {
+    background: var(--white);
+    color: var(--text);
+    cursor: not-allowed;
+}
+
+
+
+/* ChallengeBox.modules.css*/
+
+.challenge-box {
+    height: 100%;
+
+    background:  var(--white);
+    border-radius: 5px;
+    box-shadow: 0 0 68px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem 2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    
+}
+
+.challenge-no-acitive {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.challenge-no-acitive strong {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.challenge-no-acitive p {
+   display: 1.5rem;
+   flex-direction: column;
+   align-items: center;
+   line-height: 1.4;
+   max-width: 70%;
+   margin-top: 3rem;
+}
+
+.challenge-no-acitive img {
+   margin-top: 3rem;
+   margin-bottom: 3rem;
+  
+ }
+
+ .challenge-active {
+     height: 100%;
+
+     display: flex;
+     flex-direction: column;
+
+ }
+
+ .challenge-active header {
+     color:var(--title);
+     font-weight: 600;
+     font-size: 1.25rem;
+     padding: 0 2rem 1.5rem;
+     border-bottom: 1px solid var(--gray-line);
+ }
+
+ .challenge-active main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.challenge-active main strong {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--title);
+    margin: 1.5rem 0 1rem;
+}
+
+.challenge-active main p {
+   line-height: 1.5;
+}
+
+.challenge-active footer {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 1rem;
+}
+
+.challenge-active footer button {
+   height: 3rem;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   border: 0;
+   border-radius: 5px;
+
+   color: var(--white);
+
+   font-size: 1rem;
+   font-weight: 600;
+   translate: 2s;
+}
+
+.challenge-active footer button.challege-failed-button {
+    background: var(--red);
+}
+
+.challenge-active footer button.challege-succede-button {
+    background: var(--green);
+}
+
+.challenge-active footer button:hover {
+    filter: brightness(0.9);
+
+}
+
+
+
+
+/* LevelUpModal.modules.css*/
+
+ 
+.overlay {
+    background: rgba(242, 243, 245, 0.8);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Level-up-container {
+    background: var(--white);
+    width: 100%;
+    max-width:  400px;
+    padding: 2rem 3rem;
+    border-radius: 5px;
+    box-shadow:  0 0 60px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    position: relative;
+}
+
+
+.Level-up-container  header {
+ font-size: 5.72rem;
+ font-weight: 600;
+ color: var(--blue);
+ background: url('/icons/levelup.svg') no-repeat center;
+ background-size: contain;
+}
+
+.Level-up-container  strong {
+font-size: 2.25rem;
+color: var(--title);
+}
+
+.Level-up-container  p {
+    font-size: 1.25rem;
+    color: var(--text);
+    margin-top: 0.25rem;
+}
+
+.Level-up-container  button {
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+    background: transparent;
+    border: 0;
+    font-size: 0;
+}
+
+
+
+
+
+
+
+
+
+
